@@ -1,0 +1,51 @@
+React is a frontend framework useful for creating user interfaces.
+Its like if we have a card element we can easily clone it in our site.
+
+React uses JSX language which is actually HTML inside JS and Js inside HTML.
+
+an interesting place to study for React is codesandbox.io
+
+JSX uses Babel as compiler which will convert the new ES6/ES7 JS directly into old JS which will be understood by the browser.
+
+react-dom.render(what to render, where to render) is used to render the code inside our website.
+
+we should create a div with id root in the HTML file and inside that use our React code.
+
+note that in render function we cannot write JS statements like if-else, for loops etc, we can only write expressions.
+
+the proper name for fetching classes is not element.class() its element.className()
+className = "";
+
+The default casing for writing CSS is like background-color with a hypen, but in JSX its not allowed.
+we have to use the camel casing ie backgroundColor.
+
+if we want to inject CSS in JSX what we do is
+style = {{color:red}} //example for CSS in JSX 
+
+or what we can do is make a const outside the render fxn
+const colorChange = {
+    color : "red"; //dont forget that whatever we type must be a string.
+}
+and then inside the style tag, we type style = {{colorChange}}
+
+we can also change the properties of colorChange outside the render fxn, just like this
+
+colorChange.color : "blue";
+
+to make our code more compact and professional, its not a good pracice to have all our components in the JS file
+instead, we create a separate jsx file and include it inside our js file.
+
+example:
+import React from "react";
+
+function Heading(){
+    return <h1>My favorite foods!</h1>
+}
+
+export default Heading;
+
+and in the JS file add the following line:
+import Heading from './Heading';
+
+professionally, we create a separate App.jsx file and in that all our components and code, the JS file is usually very clean.
+
